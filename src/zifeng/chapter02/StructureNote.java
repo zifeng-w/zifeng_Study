@@ -33,7 +33,9 @@ package zifeng.chapter02;
  *         for循环：确定循环次数的情况下使用
  *
  *
- *
+ *    循环停止的控制语句：
+ *     continue：退出本次循环
+ *     break：退出整个循环
  *
  *
  *
@@ -65,6 +67,32 @@ public class StructureNote {
 
 
         //打印乘法口诀表
+        for (int i = 1; i < 10 ; i++) {
+            for (int y =1;y <=i;y++ ){
+
+                    System.out.print(i + "*" + y +"="+ i*y + "\t");
+
+
+            }
+            System.out.println();
+        }
+
+        //continue
+        for (int i = 0; i < 9; i++) {
+            if (i == 3) {
+                continue;  //之后的代码不执行，直接结束本次循环
+            }
+            System.out.println(i);
+        }
+
+        //break
+        for (int i = 0; i <5 ; i++) {
+            if (i == 3) {
+                break;  //退出整个循环
+
+            }
+            System.out.println(i);
+        }
 
     }
 }
