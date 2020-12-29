@@ -66,6 +66,5 @@ public class StructureNote {
 
         //打印乘法口诀表
 
-
     }
 }
