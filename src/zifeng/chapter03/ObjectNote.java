@@ -68,6 +68,23 @@ package zifeng.chapter03;
  *
  *
  *      在引用数据类型关系时，一块没有任何栈内存指向的堆内存空间将成为垃圾，所有的垃圾会不定期地呗垃圾收集器(Garbage Collector)回收，回收后会被释放掉其所占用的空间;
+ *       注意：Java支持自动的垃圾收集处理，在代码的开发过程中应该尽量减少垃圾空间的产生。
+ *
+ *
+ *
+ *
+ *
+ *     封装
+ *
+ *       所有的类中定义的属性都要求使用private声明，如果属性需要被外部所使用，那么按照要求定义相应的setter，getter方法
+ *       setter方法主要是设置内容
+ *       getter方法主要是取得属性内容
+ *
+ *
+ *
+ *     构造方法
+ *        定义原则：方法名称与类名称相同，没有返回值类型声明，同时构造方法也可以进行重载;
+ *
  *
  *
  *
@@ -103,6 +120,12 @@ public class ObjectNote {
         book.price = 88.8;
         book.getInfo();
 
+
+        Books books = new Books();
+        books.setTitles("平凡的世界");
+        books.setPrices(-12);
+        books.getInfo();
+
     }
 
 
@@ -120,5 +143,46 @@ class Book{             //定义一个新的类
     * */
     public void getInfo(){   //此方法将由对象调用
         System.out.println("图书名称："+ title +"\n"+"图书价格：" + price);
+    }
+}
+
+
+//通过封装的方法实现书籍价格获取
+class Books{
+    String titles;    //定义图书名称
+    double prices;    //定义图书价格
+
+
+    public Books(){                          //构造方法
+        System.out.println("*************");
+
+
+    }
+
+
+
+
+    public String getTitles() {
+        return titles;
+    }
+
+    public void setTitles(String titles) {
+        this.titles = titles;
+    }
+
+    public double getPrices() {
+        return prices;
+    }
+
+    public void setPrices(double prices) {
+        if(prices >= 0) {
+            this.prices = prices;
+        }else{
+            this.prices = 0.0;
+        }
+    }
+
+    public void getInfo(){
+        System.out.println("图书名称："+ titles +"\n"+"图书价格：" + prices);
     }
 }
